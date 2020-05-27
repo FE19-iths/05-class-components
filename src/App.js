@@ -1,8 +1,23 @@
 import React from 'react';
 import './App.css';
 import Counter from './counter/Counter';
+import SelectedBook from './books/SelectedBook';
+import BookList from './books/BookList';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedBook: null
+        }
+        this.doSelectBook = this.doSelectBook.bind(this);
+    }
+    doSelectBook(book) {
+        // this function will be called by BookList
+        // console.log('doSelectBook anropas', book);
+        this.setState({ selectedBook: book })
+    }
+    // doSelectBook = book => { ..... }
     render() {
         return (
             <div className="App">
@@ -11,6 +26,9 @@ class App extends React.Component {
             </header>
             <main>
                 <Counter />
+
+                <BookList doSelectBook={this.doSelectBook} />
+                <SelectedBook selected={this.state.selectedBook} />
             </main>
             </div>
         );

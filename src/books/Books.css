@@ -1,0 +1,11 @@
+/* bara lite css, vi börjar 14:42 */
+.selected-book, .book-list {
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid gray;
+    border-radius: 1em;
+}
+
+.book-list > :nth-child(even) {
+    background-color: lightgray;
+}
