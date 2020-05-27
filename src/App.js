@@ -3,6 +3,7 @@ import './App.css';
 import Counter from './counter/Counter';
 import SelectedBook from './books/SelectedBook';
 import BookList from './books/BookList';
+import Lifecycle from './lifecycle/Lifecycle';
 
 class App extends React.Component {
     constructor(props) {
@@ -29,6 +30,8 @@ class App extends React.Component {
 
                 <BookList doSelectBook={this.doSelectBook} />
                 <SelectedBook selected={this.state.selectedBook} />
+
+                <Lifecycle />
             </main>
             </div>
         );
