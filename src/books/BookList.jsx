@@ -17,6 +17,10 @@ class BookList extends React.Component {
                 {
                     title: 'JavaScript for Dummies',
                     author: 'Chris Minnick'
+                },
+                {
+                    title: 'JavaScript - the good parts',
+                    author: 'Douglas Crockford'
                 }
             ]
         }
@@ -25,7 +29,7 @@ class BookList extends React.Component {
     render() {
         const jsxList = this.state.list.map(book => (
             <div key={book.title + book.author}>
-                {book.title}, {book.author}
+                <div>{book.title}, {book.author}</div>
                 <button onClick={() => this.props.doSelectBook(book)}> Select </button>
             </div>
         ))
